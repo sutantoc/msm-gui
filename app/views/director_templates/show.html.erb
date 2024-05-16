@@ -12,6 +12,16 @@ Delete director
 
 <hr>
 
+<form action="/modify_director/<%= @the_director.id %>" method="post">
+  <label for="name_field">Name</label> <input type="text" id="name_field" name="name_field" value="<%= @the_director.name %>"> <br>
+  <label for="dob_field">Dob</label> <input type="date" id="dob_field" name="dob_field" value="<%= @the_director.dob %>"> <br>
+  <label for="bio_field">Bio</label> <input type="text" id="bio_field" name="bio_field" value="<%= @the_director.bio %>"> <br>
+  <label for="image_field">Image</label><input type="text" id="image_field" name="image_field" value="<%= @the_director.image %>"> <br>
+  <button> Update director </button>
+</form>
+
+<hr>
+
 <dl>
   <dt>
     Name

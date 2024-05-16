@@ -23,6 +23,19 @@ class DirectorsController < ApplicationController
     redirect_to("/directors")
   end
 
+  def modify
+    dir_id = params.fetch("director_id")
+    matching_dir = Director.where({ :id => dir_id})
+    the_dir = matching_dir.at(0)
+
+    the_dir.name = params.fetch("name_field")
+    the_dir.dob = params.fetch("dob_field")
+    the_dir.bio = params.fetch("bio_field")
+    the_dir.image = params.fetch("image_field")
+    the_dir.save
+
+    redirect_to("/directors/#{the_dir.id}")
+  end
 
   def create
     d = Director.new
