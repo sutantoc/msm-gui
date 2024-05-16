@@ -12,6 +12,19 @@
 
 <hr>
 
+<form action="/modify_movie/<%= @the_movie.id %>" method="post">
+  <label for="title_field">Title</label> <input id="title_field" type="text" name="title_field" value="<%= @the_movie.title %>"> <br>
+  <label for="year_field">Year</label> <input id="year_field" type="text" name="year_field" value="<%= @the_movie.year %>"> <br>
+  <label for="duration_field">Duration</label> <input id="duration_field" type="text" name="duration_field" value="<%= @the_movie.duration %>"> <br>
+  <label for="description_field">Description</label> <input id="description_field" type="text" name="description_field" value="<%= @the_movie.description %>"> <br>
+  <label for="image">Image</label> <input id="image" type="text" name="image_field" value="<%= @the_movie.image %>"> <br>
+  <label for="director_id">Director ID</label> <input id="director_id" type="text" name="director_field" value="<%= @the_movie.director_id%>"> <br>
+  <button>Update movie</button>
+</form>
+
+<hr>
+
+
 <dl>
   <dt>
     Title
