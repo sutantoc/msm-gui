@@ -15,6 +15,15 @@ class DirectorsController < ApplicationController
     render({ :template => "director_templates/show" })
   end
 
+  def delete
+    d_id = params.fetch("director_id")
+    matching_results = Director.where({ :id => d_id})
+    the_dir = matching_results.at(0)
+    the_dir.destroy
+    redirect_to("/directors")
+  end
+
+
   def create
     d = Director.new
     d.name = params.fetch("name_field")
@@ -25,6 +34,7 @@ class DirectorsController < ApplicationController
 
     redirect_to("/directors")
   end
+
 
   def max_dob
     directors_by_dob_desc = Director.
