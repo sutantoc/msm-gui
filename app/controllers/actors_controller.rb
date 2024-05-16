@@ -33,4 +33,18 @@ class ActorsController < ApplicationController
     the_act.destroy
     redirect_to("/actors")
   end
+
+  def modify
+    act_id = params.fetch("actor_id")
+    matching_act = Actor.where({ :id => act_id})
+    the_act = matching_act.at(0)
+
+    the_act.name = params.fetch("name_field")
+    the_act.dob = params.fetch("dob_field")
+    the_act.bio = params.fetch("bio_field")
+    the_act.image = params.fetch("image_field")
+    the_act.save
+
+    redirect_to("/actors/#{the_act.id}")
+  end
 end

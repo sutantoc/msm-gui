@@ -14,6 +14,16 @@ Delete actor
 
 <hr>
 
+<form action="/modify_actor/<%= @the_actor.id %>" method="post">
+  <label for="name_field">Name</label> <input id="name_field" type="text" name="name_field" value="<%= @the_actor.name %>"> <br>
+  <label for="dob_field">Dob</label> <input id="dob_field" type="date" name="dob_field" value="<%= @the_actor.dob %>"> <br>
+  <label for="bio_field">Bio</label> <input id="bio_field" type="text" name="bio_field" value="<%= @the_actor.bio %>"> <br>
+  <label for="image">Image</label> <input id="image" type="text" name="image_field" value="<%= @the_actor.image %>"> <br>
+  <button>Update actor</button>
+</form>
+
+<hr>
+
 <dl>
   <dt>
     Name
